@@ -1,0 +1,20 @@
+{
+	"name": "total et moyen des ventes par secteur",
+	"properties": {
+		"folder": {
+			"name": "tp7"
+		},
+		"content": {
+			"query": "SELECT \nc.secteur, \nSUM(v.montant) AS total_ventes,\nAVG(v.montant) AS panier_moyen\nFROM dbo.clients c\nJOIN dbo.ventes v ON c.id_client = v.id_client\nGROUP BY c.secteur;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tp6",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

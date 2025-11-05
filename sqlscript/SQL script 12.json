@@ -1,0 +1,20 @@
+{
+	"name": "SQL script 12",
+	"properties": {
+		"folder": {
+			"name": "tp8"
+		},
+		"content": {
+			"query": "-- Lister toutes les tables\nSELECT * \nFROM sys.tables;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tp8_dpool",
+				"poolName": "tp8_dpool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

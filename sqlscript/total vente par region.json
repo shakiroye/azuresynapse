@@ -1,0 +1,20 @@
+{
+	"name": "total vente par region",
+	"properties": {
+		"folder": {
+			"name": "tp7"
+		},
+		"content": {
+			"query": "SELECT \nc.région, \nCOUNT(v.id_vente) AS nb_ventes\nFROM dbo.clients c\nJOIN dbo.ventes v ON c.id_client = v.id_client\nGROUP BY c.région;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tp6",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

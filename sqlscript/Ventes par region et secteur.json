@@ -1,0 +1,20 @@
+{
+	"name": "Ventes par region et secteur",
+	"properties": {
+		"folder": {
+			"name": "tp8"
+		},
+		"content": {
+			"query": "SELECT \nc.région, c.secteur, \nSUM(v.montant) AS total_ventes\nFROM dbo.ventes v\nJOIN dbo.clients c ON v.id_client = c.id_client\nGROUP BY c.région, c.secteur",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tp8_dpool",
+				"poolName": "tp8_dpool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"name": "ventes mensuelles en 2023",
+	"properties": {
+		"folder": {
+			"name": "tp7"
+		},
+		"content": {
+			"query": "SELECT \nFORMAT(CAST(v.date AS DATE), 'yyyy-MM') AS mois,\nCOUNT(*) AS nb_ventes,\nSUM(v.montant) AS total_ventes\nFROM dbo.ventes v\nWHERE v.date >= '2023-01-01' AND v.date < '2024-01-01'\nGROUP BY FORMAT(CAST(v.date AS DATE), 'yyyy-MM')\nORDER BY mois;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tp6",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

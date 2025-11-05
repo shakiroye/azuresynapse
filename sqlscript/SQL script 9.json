@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 9",
+	"properties": {
+		"content": {
+			"query": "SELECT \nc.région, c.secteur, \nSUM(v.montant) AS total_ventes\nFROM dbo.clients c\nJOIN dbo.ventes v ON c.id_client = v.id_client\nGROUP BY c.région, c.secteur;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tp6",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

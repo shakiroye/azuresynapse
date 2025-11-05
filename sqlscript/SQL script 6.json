@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 6",
+	"properties": {
+		"content": {
+			"query": "SELECT c.région, c.secteur, SUM(v.montant) AS total_ventes\nFROM dbo.clients c\nJOIN dbo.ventes v ON c.id_client = v.id_client\nGROUP BY c.région, c.secteur;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "db-synapse",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"name": "SQL script 10",
+	"properties": {
+		"folder": {
+			"name": "tp8"
+		},
+		"content": {
+			"query": "CREATE TABLE dbo.ventes (\nid_vente INT,\nid_client INT,\nid_produit INT,\nid_date INT,\nmontant FLOAT\n);\n\nCREATE TABLE dbo.clients (\nid_client INT,\nnom NVARCHAR(100),\nrégion NVARCHAR(50),\nsecteur NVARCHAR(50)\n);\n\nCREATE TABLE dbo.produits (\nid_produit INT,\nnom_produit NVARCHAR(100),\ncatégorie NVARCHAR(50)\n)\n\nCREATE TABLE dbo.dates (\nid_date INT,\ndate DATE,\nmois NVARCHAR(20),\nannée INT\n);\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tp8_dpool",
+				"poolName": "tp8_dpool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

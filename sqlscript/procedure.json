@@ -1,0 +1,20 @@
+{
+	"name": "procedure",
+	"properties": {
+		"folder": {
+			"name": "tp8"
+		},
+		"content": {
+			"query": "CREATE PROCEDURE dbo.rapport_ventes_par_catégorie\nAS\nBEGIN\n    SET NOCOUNT ON;\n\n    SELECT \n        p.catégorie, \n        COUNT(*) AS nb_ventes,\n        SUM(v.montant) AS total\n    FROM dbo.ventes v\n    JOIN dbo.produits p \n        ON v.id_produit = p.id_produit\n    GROUP BY p.catégorie;\nEND;\n\n\nEXEC dbo.rapport_ventes_par_catégorie;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tp8_dpool",
+				"poolName": "tp8_dpool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

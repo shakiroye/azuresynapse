@@ -1,0 +1,20 @@
+{
+	"name": "Top 5 des produits les plus vendus",
+	"properties": {
+		"folder": {
+			"name": "tp7"
+		},
+		"content": {
+			"query": "SELECT \nv.produit, \nCOUNT(*) AS nb_ventes\nFROM dbo.ventes v\nGROUP BY v.produit\nORDER BY nb_ventes DESC\nOFFSET 0 ROWS FETCH NEXT 5 ROWS ONLY",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tp6",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

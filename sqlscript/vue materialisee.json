@@ -1,0 +1,20 @@
+{
+	"name": "vue materialisee",
+	"properties": {
+		"folder": {
+			"name": "tp8"
+		},
+		"content": {
+			"query": "CREATE MATERIALIZED VIEW dbo.stats_region\nWITH\n(\n    DISTRIBUTION = HASH(région),\n    CLUSTERED COLUMNSTORE INDEX\n)\nAS\nSELECT \n        c.région,\n    SUM(ISNULL(v.montant, 0)) AS total_ventes,\n    COUNT_BIG(v.montant) AS cnt,\n    c.région AS region\nFROM dbo.ventes v\nJOIN dbo.clients c \n    ON v.id_client = c.id_client\nGROUP BY c.région;\n\nSELECT * FROM dbo.stats_region;\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tp8_dpool",
+				"poolName": "tp8_dpool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"name": "SQL script 11",
+	"properties": {
+		"folder": {
+			"name": "tp8"
+		},
+		"content": {
+			"query": "COPY INTO dbo.clients\nFROM 'https://shkstrbigdata.dfs.core.windows.net/tp8/clients.csv'\nWITH (\nFILE_TYPE = 'CSV',\nFIRSTROW = 2\n);\n\nCOPY INTO dbo.produits\nFROM 'https://shkstrbigdata.dfs.core.windows.net/tp8/produits.csv'\nWITH (\nFILE_TYPE = 'CSV',\nFIRSTROW = 2\n);\n\nCOPY INTO dbo.dates\nFROM 'https://shkstrbigdata.dfs.core.windows.net/tp8/dates.csv'\nWITH (\nFILE_TYPE = 'CSV',\nFIRSTROW = 2\n);\n\nCOPY INTO dbo.ventes\nFROM 'https://shkstrbigdata.dfs.core.windows.net/tp8/ventes_fact.csv'\nWITH (\nFILE_TYPE = 'CSV',\nFIRSTROW = 2\n);",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tp8_dpool",
+				"poolName": "tp8_dpool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

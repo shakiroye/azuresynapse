@@ -1,0 +1,17 @@
+{
+	"name": "view clients creation",
+	"properties": {
+		"content": {
+			"query": "CREATE VIEW dbo.clients AS\nSELECT *\nFROM OPENROWSET(\nBULK 'https://shkstrbigdata.dfs.core.windows.net/tp6/clients.csv',\nFORMAT = 'CSV',\nPARSER_VERSION = '2.0',\nHEADER_ROW = TRUE\n) AS rows",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tp6",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
